@@ -86,7 +86,7 @@
 <script>
     const characters = []
     const list = document.getElementById('list')
-    const search = document.getElementsByTagName('input')
+    const search = document.querySelector('input')
     fetch('https://www.swapi.co/api/people')
         .then(response => response.json())
         .then(response => characters.push(...response.results))
@@ -102,9 +102,10 @@
     function render(arr) {
         const html = arr.join('')
         list.innerHTML = html
+        console.log(html)
     }
 
-
+console.log(search)
     search.addEventListener('keyup', filterText)
 </script>
 
